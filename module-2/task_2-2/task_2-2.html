@@ -12,31 +12,36 @@
     <ol>
       <li>Where should you use constants, and where should you use variables? Can they all be constants?</li>
       <p>
-				Dette er mitt svar på oppgaven, Arne-Thomas!!!!
+				-	Du bruker const når når verdien aldri skal endres for eksempel pi og valutakurs. 
+        Når du bruker let er det når verdien skal endres underveis for eksempel teller og input fra brukeren.
+         Det er ikke alt som kan være konstant, siden programmene trenger ofte verdier som skal oppdateres.
 			</p>
       <li>How do parentheses affect the arithmetic outcome of an expression?</li>
       <p>
-				[Replace this with you answer]
+				-	De bestemmer rekkefølgen på beregninger. Uten parenteser brukes matematikkens standardregler (gang/div før pluus/minus). 
+        Parenteser kan endre utfallet ved å tvinge en annen rekkefølge.
 			</p>
       <li>How do we limit floating-point numbers to a given number of decimals?</li>
       <p>
-				[Replace this with you answer]
+				-	Vi kan bruke .toFixed(n) for å vise n desimaler
 			</p>
       <li>How can we compare two floating-point values to see if they are equal (is 12.199999 the same as 12.2)?</li>
       <p>
-				[Replace this with you answer]
+				Vi kan ikke sammenligne flyttall direkte med ===, fordi små avrundingsfeil kan gjøre at tall som ser like ut, ikke blir helt like i datamaskinen. 
+        I stedet sammenligner vi forskjellen mellom tallene med en veldig liten verdi (epsilon). 
+        Hvis forskjellen er mindre enn denne verdien, regner vi tallene som like.
 			</p>
       <li>What do comparison operators return, and how can we check if they are FALSE or TRUE?</li>
       <p>
-				[Replace this with you answer]
+				De returnerer alltid en boolean  enten true eller false. Vi kan sjekke det med if eller console.log()
 			</p>
       <li>How does the Math.random() function work, and what can it be used for?</li>
       <p>
-				[Replace this with you answer]
+				-	Det gir et tilfeldig tall mellom 0 og 1. Du kan bruke det til å lage tilfeldige tall i et område for eksempel terningkast eller og simuleringer
 			</p>
       <li>What is modulus (%), and when do we need this operator in mathematical operations?</li>
       <p>
-				[Replace this with you answer]
+				-	Det gir resten etter en divisjon. Det brukes for eksempel til å sjekke om ett tall er partall, eller til å regne ut tid.
 			</p>
     </ol>
 		<script type="module" src="./task_2-2.mjs" defer></script>
