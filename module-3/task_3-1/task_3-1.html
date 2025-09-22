@@ -11,13 +11,27 @@
     </div>
     <ol>
       <li>Discuss the behavior of part 1, What happens when the wake-up time is not 7 and what happens when it is exactly 7?</li>
-      <p>[Replace this with you answer]</p>
+      <p>[Det som skjer er at hvis wake-up time er === 7 vil programmet skrive "I can take the bus to school".
+        Hvis den ikke er 7(f.eks 6 eller 8) så vil programmet skrive "I cant take the bus".
       <li>Same as question #1. How ever the answer should now be different. Discuss the behavior of part 2, What happens when the wake-up time is not 7 and what happens when it is exactly 7?</li>
-      <p>[Replace this with you answer]</p>
+      
+      <p>[Når wakeUpTime === 7 → “I can take the bus to school. Ellers -> " I have to take the car to school".
+        Kjøreeksempler: wakeUpTime = 6 -> I have to take the car to school
+        wakeUpTime = 7 -> I can take bus to school
+        eller wakeUpTime = 8 -> I have to take the car to school
+
       <li>Discuss the behavior of part 3, what happens when wake time is less than 7 or greater than 8?</li>
-      <p>[Replace this with you answer]</p>
+      
+      <p>[Logikk: if (wakeUpTime === 7) … else if (wakeUpTime === 8) … else …
+< 7 eller > 8: else-grenen → I have to take the car to school.
+
+= 7: I can take the bus to school.
+
+= 8: I can take the train to school.
+Kjøreeksempler: 7 → buss, 8 → tog.
       <li>Discuss the behavior for part 4, what happens if the number is exactly 0, is zero positive or negative?</li>
-    </ol>
+    </ol>0 er verken positivt eller negativt. Med kun to grener (> 0 ellers negativ) blir 0 feilklassifisert som negativ.
+Riktig er en tredelt sjekk: > 0 → Positive, < 0 → Negative, === 0 → Zero
     <script type="module" src="./task_3-1.mjs" defer></script>
   </body>
 </html>
