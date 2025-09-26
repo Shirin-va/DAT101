@@ -10,8 +10,33 @@
       <span id="txtOut" style="white-space: nowrap"></span>
     </div>
     <ol>
-      <li>[Write the question here, and copy this for more questions]</li>
-      <p>[Write your answer here, and copy this for more answers]</p>
+      <li>In part 1, is it possible to solve the problem using a single "for" loop?
+      
+      <p>Ja, det er mulig å bruke én løkke til å lage både den stigende og den synkende tallrekken samtidig. 
+        Likevel er det ofte enklere og mer oversiktlig å bruke to løkker, siden de gjør hver sin jobb.</p>
+
+    <li>In part 2, can we create what is known as an "infinite" loop within the condition of the "while" loop?
+Describe what would or would not be necessary to achieve this. Provide a thorough explanation of
+your answer.
+      
+      <p>Ja, for eksempel ved å skrive while (true). 
+        Da vil løkken aldri stoppe av seg selv. For at programmet ikke skal henge seg, må man ha en betingelse eller en break-setning inne i løkken som gjør at den avsluttes når man har oppnådd det man ønsker.</p>
+      
+      <li>Discuss briefly how quickly or slowly a computer might be able to compute this, considering the
+number of guesses and the time it takes. How does the program behave while it is guessing? Can
+the program perform other tasks concurrently?
+
+      <p>Datamaskinen er veldig rask, så når tallet er mellom 1 og 60 går det på millisekunder. Selv med tall mellom 1 og 1 000 000 skjer det vanligvis på under et sekund, selv om det avhenger av tilfeldighet.
+         Mens løkken kjører, bruker programmet all oppmerksomheten på å gjette tallet, og kan derfor ikke gjøre andre oppgaver samtidig. 
+         For ekte parallellitet trengs mer avanserte teknikker.</p>
+
+         <li>Explain the relationship between rows and columns in nested "for" loops. Can we, for instance,
+change the order, considering rows to be innermost or columns to be innermost, or does this not
+matter?
+
+      <p>Den ytre løkken brukes vanligvis til å kontrollere radene, mens den indre brukes til kolonnene. 
+        Man kan bytte om på rekkefølgen, men da endres også hvordan resultatet skrives ut.
+         Hvis man ønsker å skrive ut linje for linje, er det mest naturlig å la radene styres av den ytre løkken og kolonnene av den indre.</p>
     </ol>
     <script type="module" src="./task_3-2.mjs" defer></script>
   </body>
