@@ -10,8 +10,45 @@
       <span id="txtOut" style="white-space: nowrap"></span>
     </div>
     <ol>
-      <li>[Write the question here, and copy this for more questions]</li>
-      <p>[Write your answer here, and copy this for more answers]</p>
+      <li>1. What is the difference between invoking and creating a function?</li>
+      <p>Opprette (definere): du lager “oppskriften”.Kalle (invokere): du bruker oppskriften (kjører koden).</p>
+
+      <li>2. Explain the syntax regarding semicolons and code blocks.</li>
+      <p>Semikolon ; avslutter en setning. I JS er de ofte valgfrie pga. “ASI” (automatic semicolon insertion), 
+        men kan hindre rare feil.
+
+Kodeblokker { ... } grupperer setninger (f.eks. i function, if, for). Alt inni klammeparentesene hører sammen.
+
+Fallgruve: skriv ikke return og verdien på hver sin linje:
+
+return
+123 gir faktisk return; → undefined.
+
+
+gir faktisk return; → undefined.]</p>
+
+      <li>3. What happens when we try to store values from a function when it doesn't return any?</li>
+      <p>Da får variabelen verdien undefined. Funksjonen kan fortsatt ha sideeffekter (f.eks. printOut), 
+        men den gir ingen verdi tilbake.</p>
+
+      <li>4. How do we separate parameters from each other when creating a function?</li>
+      <p>Vi skiller med komma, og når vi kaller den skiller vi argumentene også med komma.</p>
+
+      <li>5. Explain how parameter names are related during the invocation and creation of a function.</li>
+      <p>I JavaScript matches argumenter til parametere etter rekkefølge (posisjon), ikke etter navn.
+
+         Navnene kan hete hva som helst i definisjonen, men 1. argument går til 1. parameter, osv.
+
+          Du kan bruke standardverdier og destrukturering for mer tydelighet:]</p>
+
+      <li>6. Explain why a parameter is undefined when a function call is missing a parameter.]</li>
+      <p>Fordi JS fyller inn undefined for manglende argumenter.</p>
+
+      <li>7. Explain what happens when we use recursive functions.</li>
+      <p>Funksjonen kaller seg selv på et mindre delproblem.
+
+Må ha en base case som stopper (ellers uendelig rekursjon/stack overflow).</p>
+
     </ol>
     <script type="module" src="./task_3-3.mjs" defer></script>
   </body>
