@@ -10,8 +10,55 @@
       <span id="txtOut" style="white-space: nowrap"></span>
     </div>
     <ol>
-      <li>[Write the question here, and copy this for more questions]</li>
-      <p>[Write your answer here, and copy this for more answers]</p>
+      <li>Why is object-oriented development so important in programming?
+      <p>Objektorientert utvikling (OOP) er viktig fordi den gjør koden strukturert, gjenbrukbar og lettere å vedlikeholde.
+I stedet for å skrive samme kode mange ganger, kan man lage klasser og objekter som kan brukes flere steder.
+Det gjør det enklere å bygge store programmer, feilsøke, og videreutvikle systemer uten å ødelegge resten av koden.
+        Du deler koden inn i små, logiske deler (objekter)
+
+Hver del har sitt ansvar (f.eks. en konto, en kunde, en bil)
+
+Du får orden, gjenbruk og mindre feil
+
+      <li>In Task 1, we create a static object called "AccountType." Explain what this object is used for and
+how this type of object can help us in software development.
+      <p>AccountType er et statisk objekt som inneholder konstanter (faste verdier) for kontotyper, som f.eks.
+
+const AccountType = { Normal: "Brukskonto", Saving: "Sparekonto", Pension: "Pensjonskonto" };
+
+
+Dette objektet brukes for å slippe skrive inn strenger manuelt overalt i koden.
+I stedet for å skrive "Sparekonto" hver gang, kan vi bruke AccountType.Saving.
+
+ Dette hjelper oss fordi:
+
+Det reduserer feil (ingen skrivefeil i tekst)
+
+Det gjør koden ryddigere og enklere å lese
+
+Det er lettere å endre senere (du endrer bare ett sted)
+
+      <li>Discuss why we use encapsulation in classes. Why do we want to "hide" code within our class?
+Explain how we can create "private" and "public" members in a constructor function
+      <p>Innkapsling betyr at vi skjuler data og funksjoner inni klassen, slik at de ikke kan endres direkte utenfra.
+Vi vil «gjemme» deler av koden for å beskytte dataene og sørge for at alt skjer på riktig måte.
+ Private medlemmer: lages med #, f.eks. #balance (kan bare brukes inni klassen).
+Public medlemmer: vanlige navn uten #, f.eks. deposit() (kan brukes utenfra).
+
+
+      <li>[Explain what happens when we use the "new" command in JavaScript.
+      <p>const myAccount = new TAccount(AccountType.Normal);
+skjer dette:
+
+JavaScript lager et nytt objekt (en kopi av klassen)
+
+constructor() i klassen kjører automatisk
+
+Objektet får sine egne verdier (type, saldo, osv.)
+
+Variabelen myAccount peker nå på dette nye objektet
+
+Kort sagt: new brukes for å opprette en ny instans av en klasse – et faktisk objekt du kan bruke.
     </ol>
     <script type="module" src="./task_4-1.mjs" defer></script>
   </body>
