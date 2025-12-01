@@ -99,6 +99,81 @@
 <ol>
   <li>[Write the question here, and copy this for more questions]</li>
   <p>[Write your answer here, and copy this for more answers]</p>
+
+   <li>In this assignment, we use the DOM. Explain how this library can help us develop interactive web
+pages</li>
+  <p>DOM (Document Object Model) er en måte for JavaScript å forstå og jobbe med hele nettsiden på.
+Når en HTML-side lastes, blir den gjort om til et tre av objekter som JavaScript kan:
+
+finne (f.eks. getElementById)
+
+endre (endre tekst, farger, bilder osv.)
+
+legge til eller fjerne elementer
+
+reagere på brukerhandlinger (klikk, tastetrykk, valg, input)
+
+Uten DOM hadde JavaScript ikke kunnet endre selve nettsiden mens den kjører.
+DOM gjør derfor websider interaktive, ved at vi kan oppdatere innhold uten å laste siden på nytt.</p>
+
+   <li>What is an event? Simply explain what happens when we add an event listener to an object.
+</li>
+  <p>Et event er en hendelse som skjer på nettsiden, for eksempel:
+
+et klikk
+
+musen beveger seg
+
+en tast blir trykket
+
+en dropdown endres
+
+et skjema sendes inn</p>
+
+   <li>Sometimes we need to use an event object to get data from the event. Explain how this event
+object is structured, don't explain all functions or attributes. Try to explain, for example, how to
+retrieve data from a keyboard or mouse</li>
+  <p>Når en hendelse skjer, lager nettleseren et event-objekt som inneholder informasjon om hendelsen.
+
+Eksempler:
+
+For tastatur:
+
+hvilken tast ble trykket? (event.key)
+
+hvilken kode har tasten? (event.code)
+
+For mus:
+
+hvor var musen? (event.clientX, event.clientY)
+
+hvilken knapp ble trykket? (event.button)</p>
+
+   <li>Explain the main difference between DOM id and DOM name. Can we have identical IDs?</li>
+  <p>DOM id
+
+Må være unik på hele HTML-siden
+
+Brukes ofte til JavaScript-manipulasjon
+
+Hentes med getElementById("id")
+
+DOM name
+
+Kan brukes på flere elementer
+
+Brukes mest i skjemaer (f.eks. radioknapper i samme gruppe)
+
+Hentes med getElementsByName("name")
+
+Kan vi ha identiske IDs?
+
+NEI.
+HTML-standard sier at en ID skal være unik.
+
+Nettleseren klarer å vise siden selv om du gjør det, men JavaScript blir forvirret, og getElementById vil bare hente den første.</p>
+
+   
 </ol>
 <script type="module" src="./task_4-3.mjs" defer></script>
 </body>
