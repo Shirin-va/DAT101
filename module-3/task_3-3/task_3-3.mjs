@@ -133,52 +133,54 @@ printOut(newLine);
 
 printOut("--- Part 5 ----------------------------------------------------------------------------------------------");
 /*  Part 5 (12 points)
-Create a function that handles the conversion between Celsius, Fahrenheit, and Kelvin. Use three different
-numbers and print all three combinations as integers (no decimals). Design the function to take two
-parameters: first the temperature, then the temperature type/id. Use these parameters to convert to the
-other two temperature types and print them. Formula:
+Fahrenheit = (Kelvin - 273.15) * 9/5 + 32
+Celsius = Kelvin - 273.15
+Celsius = (Fahrenheit - 32) * 5/)
 */
 
-function konverterTemp(value, type) {
-  const t = String(type).toUpperCase();
-  if (!Number.isFinite(Number(value))) {
-    printOut("Ugyldig temperatur.");
-    printOut(newLine);
-    return;
-  }
-
-  let C, F, K;
-
-  if (t === "C") {
-    C = Number(value);
-    F = C * 9/5 + 32;
-    K = C + 273.15;
-  } else if (t === "F") {
-    F = Number(value);
-    C = (F - 32) * 5/9;
-    K = C + 273.15;
-  } else if (t === "K") {
-    K = Number(value);
-    C = K - 273.15;
-    F = C * 9/5 + 32;
-  } else {
-   printOut("Ugyldig type. Bruk 'C', 'F' eller 'K'.");
-
-    printOut(newLine);
-    return;
-  }
-
-  const r = (n) => Math.round(n); 
-
-  printOut(`Input: ${value} ${t}`);
-  printOut(`${r(C)} °C`);
-  printOut(`${r(F)} °F`);
-  printOut(`${r(K)} K`);
-  printOut(newLine);
+const ETemperatureType = {
+  Kelvin: 2,
+  Celsius: 2,
+  Fahrenheit: 3,
 }
-konverterTemp(25, "C");   
-konverterTemp(77, "F");   
-konverterTemp(300, "K");
+
+function Part5ConvertTemp(aTemp, aTempType){
+  let kelvin = 0, Celsius = 0, Fahrenheit = 0;
+
+
+  switch(aTempType){
+    case ETemperatureType.Kelvin:
+      kelvin = aTemp;
+      Celsius = kelvin - 273.15;
+      Fahrenheit = (kelvin - 273.15) * 9/5 + 32;
+      tempTypeName = "kelvin";
+      break;
+
+      case ETemperatureType.Celsius:
+        Celsius = aTemp;
+        kelvin = Celsius + 273.15;
+        Fahrenheit = (Celsius * 9/5) + 32;
+        tempTypeName = "Celsius";
+        break; 
+
+        case ETemperatureType.Fahrenheit:
+          Fahrenheit = aTemp;
+          Celsius = (fahrenheit - 32) * 5/9;
+          kelvin = Celsius + 273.15;
+          tempTypeName = "Fahrenheit";
+          break; 
+  }
+}
+
+printOut('Convert from ${aTemp} ${tempTypeName}:');
+printOut(' kelvin: ${Math.round(kelvin)}');
+printOut('&nbsp;Celsius: ${celsius.toFixed(0)}');
+printOut('&nbsp;Fahrenheit: ${fahrenheit.toFixed(0)}');
+printOut("");
+
+
+
+
 
 printOut("--- Part 6 ----------------------------------------------------------------------------------------------");
 /*  Create a function that calculates the price without VAT (sales tax). The function needs two arguments, one
@@ -189,40 +191,30 @@ tax, i.e., the net price. Call the function four times with different gross amou
 groups (25, 15, and 10) and one with an unknown group for example “goblins”. Tip: Use "NaN" to identify
 that an unknown VAT group is returned from the function. Formula: net = (100 * gross) / (vat + 100)*/
 
-function calcNet(gross, groupText) {
-  const g = Number(gross);
-  const key = String(groupText).trim().toLowerCase();
-
-  
-  let vat;
-  if (key === "normal") {
-    vat = 25;
-  } else if (key === "food") {
-    vat = 15;
-  } else if (key === "hotel" || key === "transport" || key === "cinema") {
-    vat = 10;
-  } else {
-    return NaN; 
+function Part6Calculate(aGrossAmount, aTaxGroup){
+  const txGroup = aTaxGruop.toLowerCase();
+  switch (taxGroup) {
+  case "normal":
+    taxRate = 25;
+      break;
+    case "food":
+      break;
+    case "hotel":
+     case "transport":
+     case "cinema":
+       taxRate = 10;
+       break;
+     default:
+       printOut("Error: Unknown tax group!");
+       return;
   }
 
-  return (100 * g) / (vat + 100);
+const netAmount = (100 * aGrossAmount) / (taxRate + 100);
+printOut('Gross amount:) ${aGrossAmount.toFixed(2)}');
+printOut('Tax group: ${aTaxGroup}, Tax rate: $[taxRate}%');
+printOut('Net amount: ${netAmount.toFixed(2)}');
+
 }
-
-
-function printNet(gross, groupText) {
-  const net = calcNet(gross, groupText);
-  if (Number.isNaN(net)) {
-    printOut(`Input: ${gross} (${groupText}) → Unknown VAT group!`);
-  } else {
-    printOut(`Input: ${gross} (${groupText}) → Net: ${net.toFixed(2)}`);
-  }
-}
-
-
-printNet(125, "normal");   // 25%
-printNet(115, "food");     // 15%
-printNet(110, "hotel");    // 10%  
-printNet(999, "goblins");  // ukjent gruppe
 
 printOut(newLine);
 
